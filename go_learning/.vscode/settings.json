@@ -1,0 +1,6 @@
+{
+    // 不起作用  
+    // "go.inferGopath": true,
+    // "go.toolsGopath": "/usr/local/go",
+    // "go.gopath": "${workspaceRoot}"
+}
