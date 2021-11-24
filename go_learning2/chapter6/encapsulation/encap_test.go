@@ -40,6 +40,7 @@ func TestCreateEmployeeObj(t *testing.T) {
 	t.Logf("e的类型是 %T", &e1)     // 加个取指符  *encapsulation_test.Employee
 }
 
+// 方法名前面加上结构体名，则说明这个方法是结构体的方法，结构体实例可以直接调用该方法
 // 行为(方法)的定义一，此方式会复制e对象，此时e是一个新的地址
 func (e Employee) MyString() string {
 	// 这样直接可以获取该对象，(e Employee)说明这个方法是结构体Employee的方法

@@ -7,12 +7,11 @@ import (
 
 // 相当于父类
 type Pet struct {
-
 }
 
 // 父类的方法
 func (p *Pet) Speak() {
-    fmt.Print("...")
+	fmt.Print("...")
 }
 func (p *Pet) SpeakTo(host string) {
 	p.Speak()
@@ -21,7 +20,7 @@ func (p *Pet) SpeakTo(host string) {
 
 // 实现组合
 type Dog struct {
-    p *Pet // 扩展Pet的功能
+	p *Pet // 扩展Pet的功能，此处是指针类型
 }
 
 func (d *Dog) Speak() {
@@ -37,7 +36,7 @@ func (d *Dog) SpeakTo(host string) {
 // 测试组合复用
 func TestDog(t *testing.T) {
 	dog := new(Dog)
-	dog.Speak() // ...
+	dog.Speak()        // ...
 	dog.SpeakTo("dog") // ... dog
 }
 
@@ -51,8 +50,14 @@ func (c *Cat) Speak() {
 	fmt.Println("miao")
 }
 
+// func (c *Cat) SpeakTo(a string) {
+// 	fmt.Println("miao SpeakTo")
+// }
+
 // 测试继承
 func TestCat(t *testing.T) {
 	cat := new(Cat)
-	cat.SpeakTo("cat") // ... cat,注意不是miao cat
+
+	// cat实例可以调Pet的SpeakTo方法，类似继承，如果cat有SpeakTo，则调cat自己的
+	cat.SpeakTo("cat") // ... cat,注意不是miao cat, SpeakTo里的Speak调的还是Pet父类的方法
 }
