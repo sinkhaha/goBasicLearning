@@ -1,22 +1,23 @@
 package func_test
 
 import (
+	"fmt"
 	"math/rand"
 	"testing"
-	"fmt"
 	"time"
 )
 
 // 测试函数可以有2个返回值
 func TestFn(t *testing.T) {
-   a, b := ReturnMutilValues()
-   t.Log(a, b)
+	a, b := ReturnMutilValues()
+	t.Log(a, b)
 
-   // 技巧，下划线_忽略返回值
-   c, _ := ReturnMutilValues()
-   t.Log(c)
+	// 技巧，下划线_忽略返回值
+	c, _ := ReturnMutilValues()
+	t.Log(c)
 }
 
+// 函数的返回值有2个，所以返回类型用括号括起来，返回1个则不用
 func ReturnMutilValues() (int, int) {
 	return rand.Intn(10), rand.Intn(20)
 }
@@ -24,7 +25,7 @@ func ReturnMutilValues() (int, int) {
 // 一个计算函数耗时的函数
 // inner func (op int) int传入一个函数，这个函数是返回int型
 // 代表func (op int) int这个函数是返回一个函数
-func TimeSpent(inner func (op int) int) func (op int) int {
+func TimeSpent(inner func(op int) int) func(op int) int {
 	return func(n int) int {
 		start := time.Now()
 		ret := inner(n)
@@ -54,9 +55,10 @@ func TestChangeFun(t *testing.T) {
 	t.Log(a, b) // 6,10
 }
 
+// 可变参数 注意省略号是跟在类型前，而不是变量前
 func Sum(ops ...int) int {
 	ret := 0
-	for _,op := range ops {
+	for _, op := range ops {
 		ret += op
 	}
 	return ret
@@ -65,10 +67,10 @@ func Sum(ops ...int) int {
 // 测试defer函数（可以用于释放一些锁什么的资源）
 func TestDeferFun(t *testing.T) {
 	// 在函数执行结束后才会执行，即使抛错了也会执行
-	defer Clear() 
+	defer Clear()
 
 	fmt.Println("start")
-	panic("手动抛错误") // panic内置
+	panic("手动抛错误")     // panic内置
 	fmt.Println("end") // 前面报错了，此句不会执行
 }
 
