@@ -1,29 +1,29 @@
 package err_test
 
 import (
-	"testing"
 	"errors"
 	"fmt"
+	"testing"
 )
 
 // 自己定义错误类型,errors.New创建错误实例子
 var LessTwoErr = errors.New("n小于2")
 var LargerHundredErr = errors.New("大于100")
 
-func GetFibonacci(n int) ([]int, error){
+func GetFibonacci(n int) ([]int, error) {
 	// 添加错误机制
 	if n < 2 {
 		// return nil,errors.New("n小于2")
 		// 改成返回同一个错误实例
-		return nil,LessTwoErr
+		return nil, LessTwoErr
 	}
 	if n > 100 {
 		// return nil,errors.New("大于100")
-		return nil,LargerHundredErr
+		return nil, LargerHundredErr
 	}
 	fibList := []int{1, 1}
-	for i:=2; i<n; i++ {
-       fibList = append(fibList, fibList[i-2]+fibList[i-1])
+	for i := 2; i < n; i++ {
+		fibList = append(fibList, fibList[i-2]+fibList[i-1])
 	}
 	return fibList, nil
 }
