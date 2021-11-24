@@ -8,7 +8,8 @@ type MyInt int64
 // 测试go不支持隐式类型转换
 func TestTypeChange(t *testing.T) {
 	var a int32 = 1
-	var b int64
+	var b int64 // 默认值0
+
 	// 错误，不支持隐式类型转换
 	// b = a
 	// 正确，显示类型转换
@@ -26,18 +27,21 @@ func TestTypeChange(t *testing.T) {
 // go不支持指针运算
 func TestPoint(t *testing.T) {
 	a := 1
-	aPtr := &a // &a获取a的地址
+	aPtr := &a          // &a获取a的地址，类似c++
+	var aPtr2 *int = &a // 等价于 aPtr2 := &a
+
 	// 错误，不支持指针运算
 	// aPtr = aPtr + 1
-	t.Log(a, aPtr)
-	t.Logf("%T %T", a, aPtr) // 格式化获取变量的类型， %T 获取变量的类型
+
+	t.Log(a, aPtr, aPtr2)
+	t.Logf("%T %T %T", a, aPtr, aPtr2) // 格式化获取变量的类型， %T 获取变量的类型，输出int *int
 }
 
 // go把string初始化为空字符串
 func TestString(t *testing.T) {
 	var s string
 	t.Log("*" + s + "*") //**
-	t.Log(len(s)) // 0
+	t.Log(len(s))        // 0
 	if s == "" {
 		t.Log("string初始值为空字符串")
 	}

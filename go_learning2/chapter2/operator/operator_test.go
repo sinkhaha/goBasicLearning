@@ -12,19 +12,19 @@ func TestOperator(t *testing.T) {
 	// false
 	t.Log(a == b)
 
-	// 数组长度不一样，出现编译错误
+	// 数组长度不一样不能比较，出现编译错误
 	// t.Log(a == c)
 
 	// true
 	t.Log(a == d)
-	
+
 	// false 元素顺序不一样
 	t.Log(a == e)
 }
 
 // 测试按位置零 &^ 运算符
 func TestOpe(t *testing.T) {
-	a := 7 // 0111
+	a := 7     // 0111
 	a = a &^ 1 // 0111 &^ 01 等于 0110 即 6
 	t.Log(a)
 }
