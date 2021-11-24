@@ -23,7 +23,7 @@ func TestConst1(t *testing.T) {
 }
 
 const (
-	Readable = 1 << iota // 表示增量为向左移1,
+	Readable = 1 << iota // 表示增量为向左移1
 	Writable
 	Executable
 )
