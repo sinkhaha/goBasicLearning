@@ -39,3 +39,26 @@ func TestRecover(t *testing.T) {
 func errHandle() {
 	panic(errors.New("出错了"))
 }
+
+// 数组下标越界，空指针异常时，系统就会调用自己本身的panic函数
+func TestArrayRangeErr(t *testing.T) {
+	i := 10
+	testArrayRange(i)
+	fmt.Println("hello world")
+}
+
+func testArrayRange(i int) {
+	var arr [10]int
+	// 优先使用错误拦截 在错误出现之前进行拦截 在错误出现后进行错误捕获
+	// 错误拦截必须配合defer使用  通过匿名函数使用
+	defer func() {
+		//恢复程序的控制权
+		err := recover()
+		if err != nil {
+			fmt.Println(err) // runtime error: index out of range [10] with length 10
+		}
+	}()
+
+	arr[i] = 123     // err panic
+	fmt.Println(arr) // 前面出错了，这里不会执行到
+}
