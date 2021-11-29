@@ -1,13 +1,13 @@
 package any_response
 
 import (
-	"testing"
 	"fmt"
-	"time"
 	"runtime"
+	"testing"
+	"time"
 )
 
-func runTask(i int) string{
+func runTask(i int) string {
 	time.Sleep(10 * time.Millisecond)
 	return fmt.Sprintf("the result is from %d", i)
 }
@@ -16,8 +16,8 @@ func FirstResponse() string {
 	numberOfRunner := 10
 	// 实例buffer channel
 	ch := make(chan string, numberOfRunner)
-	for i:= 0;i<numberOfRunner;i++{
-		go func(i int){
+	for i := 0; i < numberOfRunner; i++ {
+		go func(i int) {
 			ret := runTask(i)
 			ch <- ret
 		}(i)
@@ -26,14 +26,14 @@ func FirstResponse() string {
 	return <-ch
 }
 
-// 测试仅需任意任务完成
+// 测试仅需任意一个任务完成
 func TestFirstResponse(t *testing.T) {
 	// 协程数
-	t.Log("before:", runtime.NumGoroutine())
+	t.Log("before:", runtime.NumGoroutine()) // 2
 
 	t.Log(FirstResponse())
 
 	time.Sleep(1 * time.Second)
 
-	t.Log("after:", runtime.NumGoroutine())
+	t.Log("after:", runtime.NumGoroutine()) // 2
 }

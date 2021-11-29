@@ -2,8 +2,8 @@ package sync_pool_obj_cache
 
 import (
 	"fmt"
-	"sync"
 	"runtime"
+	"sync"
 	"testing"
 )
 
@@ -36,7 +36,6 @@ func TestSyncPool(t *testing.T) {
 	v2, _ := pool.Get().(int)
 	fmt.Println("获取到的对象v2是", v2)
 }
-
 
 // 测试多个协程操作对象池
 func TestSyncPoolInMultiGroutine(t *testing.T) {

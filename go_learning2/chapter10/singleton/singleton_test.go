@@ -1,23 +1,22 @@
 package singleton_test
 
 import (
-	"testing"
 	"fmt"
 	"sync"
+	"testing"
 	"unsafe"
 )
 
 type Singleton struct {
-
 }
 
 var singleInstance *Singleton
 var once sync.Once
 
 // 实例化
-func GetSingletonObj() *Singleton{
+func GetSingletonObj() *Singleton {
 	// 只执行一次的方法once.Do()
-    once.Do(func(){
+	once.Do(func() {
 		fmt.Println("create obj")
 		singleInstance = new(Singleton)
 	})
@@ -32,7 +31,7 @@ func TestGetSingletonObje(t *testing.T) {
 		wg.Add(1)
 		go func() {
 			obj := GetSingletonObj()
-			// 输出对象的地址，都是同一个对象所以是同一个地址1268f78
+			// 输出对象的地址，都是同一个对象所以是同一个地址，如1268f78
 			fmt.Printf("%x\n", unsafe.Pointer(obj))
 			wg.Done()
 		}()

@@ -12,7 +12,6 @@ var OverFlowError = errors.New("overflow")
 
 // 定义对象池中存放的对象
 type ReusableObj struct {
-
 }
 
 // 对象池(建议使用不同的池来缓存不同的对象，并不建议池中缓存空接口来存放任何对象，这样在取值时还需要去判断对象的类型)
@@ -33,11 +32,11 @@ func NewObjPool(numOfObj int) *ObjPool {
 
 // 定义ObjPool对象的获取对象方法
 func (p *ObjPool) GetObj(timeout time.Duration) (*ReusableObj, error) {
-    select {
+	select {
 	case ret := <-p.bufChan:
-		return ret,nil
-	case <- time.After(timeout): // 超时控制
-	    return nil, TimeOutError
+		return ret, nil
+	case <-time.After(timeout): // 超时控制
+		return nil, TimeOutError
 	}
 }
 
