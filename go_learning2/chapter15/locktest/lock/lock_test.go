@@ -60,7 +60,6 @@ func lockAccess() {
 	wg.Wait()
 }
 
-
 // 运行性能测试进行对比加锁和没加锁情况
 func BenchmarkLockFree(b *testing.B) {
 	b.ResetTimer()

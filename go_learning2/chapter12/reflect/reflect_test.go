@@ -1,10 +1,10 @@
 package reflect_test
 
 import (
+	"errors"
 	"fmt"
 	"reflect"
 	"testing"
-	"errors"
 )
 
 // 检查类型公共函数
@@ -38,11 +38,10 @@ func TestTypeAndValue(t *testing.T) {
 	t.Log(reflect.ValueOf(f).Type())
 }
 
-
 // 通过反射编写灵活代码
 type Employee struct {
 	EmployeeID string
-	Name       string `haha:"normal"`  // struct tag,是一个key/value结构
+	Name       string `haha:"normal"` // struct tag,是一个key/value结构
 	Age        int
 }
 
@@ -56,7 +55,7 @@ func TestInvokeByName(t *testing.T) {
 	e := &Employee{"1", "Mike", 30}
 	// 通过反射按名字获取成员的值
 	t.Logf("Name: value(%[1]v), Type(%[1]T) ", reflect.ValueOf(*e).FieldByName("Name"))
-	
+
 	// 通过反射按名字获取成员的类型
 	if nameField, ok := reflect.TypeOf(*e).FieldByName("Name"); !ok {
 		t.Error("Failed to get 'Name' field.")
@@ -73,7 +72,6 @@ func TestInvokeByName(t *testing.T) {
 	t.Log("Updated Age:", e)
 }
 
-
 type Customer struct {
 	CookieID string
 	Name     string
@@ -84,7 +82,7 @@ type Customer struct {
 func TestDeepEqual(t *testing.T) {
 	a := map[int]string{1: "one", 2: "two", 3: "three"}
 	b := map[int]string{1: "one", 2: "two", 4: "three"}
-	
+
 	t.Log("a==b?", reflect.DeepEqual(a, b)) // false
 
 	s1 := []int{1, 2, 3}
@@ -96,7 +94,7 @@ func TestDeepEqual(t *testing.T) {
 
 	c1 := Customer{"1", "Mike", 40}
 	c2 := Customer{"1", "Mike", 40}
-	fmt.Println(c1 == c2) // true
+	fmt.Println(c1 == c2)                  // true
 	fmt.Println(reflect.DeepEqual(c1, c2)) // true
 }
 
@@ -158,4 +156,3 @@ func fillBySettings(st interface{}, settings map[string]interface{}) error {
 	}
 	return nil
 }
-
