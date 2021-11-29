@@ -2,8 +2,8 @@ package remote_package
 
 import (
 	"testing"
-    // 导入github的包, cm是起别名
-    cm "github.com/easierway/concurrent_map"
+	// 导入github的包, cm是起别名
+	cm "github.com/easierway/concurrent_map"
 )
 
 // 测试导入github远程线程安全的map包

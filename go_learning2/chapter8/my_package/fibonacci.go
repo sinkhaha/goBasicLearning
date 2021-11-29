@@ -4,23 +4,23 @@ import "fmt"
 
 // 创建package里面的init方法
 func init() {
-    fmt.Println("init1")
+	fmt.Println("init1")
 }
 
 func init() {
-    fmt.Println("init2")
+	fmt.Println("init2")
 }
 
 // 首字母必须大写，小写外部访问不了
-func GetFibonacci(n int) []int{
+func GetFibonacci(n int) []int {
 	fibList := []int{1, 1}
-	for i:=2; i<n; i++ {
-       fibList = append(fibList, fibList[i-2]+fibList[i-1])
+	for i := 2; i < n; i++ {
+		fibList = append(fibList, fibList[i-2]+fibList[i-1])
 	}
 	return fibList
 }
 
 // 测试方法名首字母小写不可以被外部调用,外部引用会报错
-func testLowerCase(){
+func testLowerCase() {
 	fmt.Println("首字母小写不可被外部调用")
 }

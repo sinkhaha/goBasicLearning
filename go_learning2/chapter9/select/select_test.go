@@ -1,9 +1,9 @@
 package select_test
 
 import (
+	"fmt"
 	"testing"
 	"time"
-	"fmt"
 )
 
 func service() string {
@@ -18,10 +18,10 @@ func AsyncService() chan string {
 	retCh := make(chan string)
 	// 在协程里执行
 	go func() {
-	   ret := service()
-	   fmt.Println("return result")
-	   retCh <- ret
-	   fmt.Println("service exit")
+		ret := service()
+		fmt.Println("return result")
+		retCh <- ret
+		fmt.Println("service exit")
 	}()
 	return retCh
 }
@@ -29,15 +29,15 @@ func AsyncService() chan string {
 // 测试select实现超时机制
 func TestSelect(t *testing.T) {
 	// case后面跟的是一种阻塞事件，case不能保证执行顺序，哪个先准备好处于非阻塞状态则哪个先执行
-	select {	
+	select {
 	// 从channel等待一个消息
 	case ret := <-AsyncService():
 		t.Log(ret)
-	// 超时100ms，比上面的500ms短，所以会先执行	
+	// 超时100ms，比上面的500ms短，所以会先执行
 	case <-time.After(time.Millisecond * 100):
 		t.Error("time out")
-	// 当执行select时其他事件都没准备好，此时会直接执行default，没有default则阻塞在case事件中
-	// default:
-	//	t.Error("都没准备好")		
+		// 当执行select时其他事件都没准备好，此时会直接执行default，没有default则阻塞在case事件中
+		// default:
+		//	t.Error("都没准备好")
 	}
 }
