@@ -1,18 +1,18 @@
 package channel_cancel
 
 import (
-	"testing"
-	"fmt"
-	"time"
 	"context"
+	"fmt"
+	"testing"
+	"time"
 )
 
 func isCancelled(ctx context.Context) bool {
-    select {
+	select {
 	case <-ctx.Done():
 		return true
 	default:
-		return false	
+		return false
 	}
 }
 
@@ -22,13 +22,13 @@ func TestCancleTack(t *testing.T) {
 	partentCtx := context.Background()
 	// 创建子context
 	childCtx, cancel := context.WithCancel(partentCtx)
-	
+
 	// 开启5个协程处理任务
 	for i := 0; i < 5; i++ {
 		go func(i int, childCtx context.Context) {
-            for {
+			for {
 				if isCancelled(childCtx) {
-                    break
+					break
 				}
 				time.Sleep(time.Millisecond * 5)
 			}
@@ -38,6 +38,6 @@ func TestCancleTack(t *testing.T) {
 
 	// 取消任务
 	cancel()
-	
+
 	time.Sleep(time.Second * 1)
 }
