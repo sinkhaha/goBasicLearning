@@ -56,7 +56,7 @@ func TestAsyncService(t *testing.T) {
 	retCh := AsyncService() // 此时可能还没执行完成
 	otherTask()
 
-	// 往channel取数据
+	// 往channel取数据并打印出来
 	fmt.Println(<-retCh)
 
 	fmt.Println("finally")
