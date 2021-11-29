@@ -15,7 +15,7 @@ func dataProducer(ch chan int, wg *sync.WaitGroup) {
 		}
 		// 当数据发送完了，关闭channel，通知接收者
 		close(ch)
-		// 往关闭的channel发消息，会发生panic错误
+		// 执行 ch <- 11 往关闭的channel发消息，会发生panic错误
 		// ch <- 11
 		wg.Done()
 	}()
@@ -42,6 +42,7 @@ func dataReceiver(ch chan int, wg *sync.WaitGroup) {
 // 测试发送者关闭channel通知接收者
 func TestCloseChannel(t *testing.T) {
 	var wg sync.WaitGroup
+
 	// 声明一个channel
 	ch := make(chan int)
 	wg.Add(1)

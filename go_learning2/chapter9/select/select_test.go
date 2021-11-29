@@ -26,7 +26,7 @@ func AsyncService() chan string {
 	return retCh
 }
 
-// 测试select实现超时机制
+// 测试select实现 超时机制
 func TestSelect(t *testing.T) {
 	// case后面跟的是一种阻塞事件，case不能保证执行顺序，哪个先准备好处于非阻塞状态则哪个先执行
 	select {

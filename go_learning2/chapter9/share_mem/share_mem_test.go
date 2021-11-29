@@ -33,6 +33,7 @@ func TestShareMemorySafe(t *testing.T) {
 			defer func() {
 				mut.Unlock()
 			}()
+
 			// 加锁
 			mut.Lock()
 			counter++

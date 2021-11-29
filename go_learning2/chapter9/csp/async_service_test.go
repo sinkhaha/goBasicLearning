@@ -31,16 +31,20 @@ func TestService(t *testing.T) {
 func AsyncService() chan string {
 	// 声明一个channel，string表示这个channel只能放string类型的数据
 	retCh := make(chan string)
-	// 在协程里执行
+
+	// 开启协程执行service方法
 	go func() {
 		ret := service()
+
 		fmt.Println("return result")
-		// 当有结果了往channel里放数据,等接收者接收了才会执行service exit,
+
+		// 当有结果了往channel里放数据，等接收者接收了才会输出“service exit”
 		// 所以这里会阻塞这个协程，改进方式，改为不阻塞
-		// 声明channel时使用bufferchannle,此时容量为1，retCh := make(chan string, 1)
+		// 声明channel时使用bufferchannel，此时容量为1，retCh := make(chan string, 1)
 		retCh <- ret
 		fmt.Println("service exit")
 	}()
+
 	return retCh
 }
 
@@ -56,7 +60,7 @@ func TestAsyncService(t *testing.T) {
 	retCh := AsyncService() // 此时可能还没执行完成
 	otherTask()
 
-	// 往channel取数据并打印出来
+	// 往channel取数据并打印出来，打印done，然后协程会继续执行
 	fmt.Println(<-retCh)
 
 	fmt.Println("finally")

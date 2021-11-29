@@ -17,7 +17,7 @@ func isCancelled(ctx context.Context) bool {
 }
 
 // 测试用context来取消关联任务
-func TestCancleTack(t *testing.T) {
+func TestCancelTack(t *testing.T) {
 	// 创建根context
 	partentCtx := context.Background()
 	// 创建子context
