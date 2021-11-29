@@ -2,10 +2,9 @@ package bdd
 
 import (
 	"testing"
-    // 这里导入有个点，表示当前导入的包的方法都是在当前的名字空间，直接使用即可，如Convey()
+	// 这里导入有个点，表示当前导入的包的方法都是在当前的名字空间，直接使用即可，如Convey()
 	. "github.com/smartystreets/goconvey/convey"
 )
-
 
 func TestSpec(t *testing.T) {
 
