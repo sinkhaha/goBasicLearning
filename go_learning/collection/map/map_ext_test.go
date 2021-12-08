@@ -13,7 +13,7 @@ func TestMapWithFunValue(t *testing.T) {
 	t.Log(m[1](2), m[2](2), m[3](2))
 }
 
-// go没有提供内置的set功能，用map实现set,把map的值设置为true
+// go没有提供内置的set功能，用map实现set，把map的值设置为true
 func TestMapForSet(t *testing.T) {
 	mySet := map[int]bool{}
 	mySet[1] = true

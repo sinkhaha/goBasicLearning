@@ -7,4 +7,10 @@
 * [类型转换/指针类型](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/basics/type/type_test.go)
 * [运算符](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/basics/operator/operator_test.go)
 * [for循环/switch/if条件](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/basics/loop/loop_test.go)
-
+## 字符串
+* 字符串
+## 常用集合
+* 数组
+* 切片
+* map/set
+  

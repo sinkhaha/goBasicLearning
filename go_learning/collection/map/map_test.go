@@ -2,7 +2,7 @@ package map_test
 
 import "testing"
 
-// 测试map的声明和初始化
+// map的声明和初始化
 func TestInitMap(t *testing.T) {
 	// 方式一：中括号里面string是key的类型，后面int是值的类型
 	m1 := map[int]int{1: 1, 2: 4, 3: 9}
@@ -12,13 +12,14 @@ func TestInitMap(t *testing.T) {
 	// 方式二
 	m2 := map[int]int{}
 	m2[4] = 16
-	t.Logf("len m2=%d", len(m2)) //1
+	t.Logf("len m2=%d", len(m2)) // 1
 
-	// 方式三 10表示容量为10，map不能用cap函数
+	// 方式三：10表示容量为10，map不能用cap函数
 	m3 := make(map[int]int, 10)
 	t.Logf("len m3=%d", len(m3)) // 0
 }
 
+// map判断元素是否存在：map当元素不存在时，获取到此元素的值为0，当元素存在且本身的值为0时，此时就不能正确判断
 func TestAccessNotExistingKey(t *testing.T) {
 	m1 := map[int]int{}
 	t.Log(m1[1]) // 默认初始化为0
