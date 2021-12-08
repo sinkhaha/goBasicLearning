@@ -27,6 +27,6 @@
 * [错误处理](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/error-handle/errhandle/errhandle_test.go)
 
 ## 包
-* 导入自己的包
-* 导入远程包
+* [导入自己的包](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/package-kno/get_my_package/package_test.go)
+* [导入远程包](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/package-kno/remote_package/remote_package_test.go)
 
