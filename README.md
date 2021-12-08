@@ -14,4 +14,5 @@
 * [切片](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/collection/slice/slice_test.go)
 * [map](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/collection/map)
 ## 函数
-* [函数]()
+* [函数](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/func/func_test.go)
+
