@@ -22,3 +22,7 @@
 * [扩展和复用(组合)](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/object-program/extendsion/extendsion_test.go)
 * [多态](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/object-program/duotai/duotai_test.go)
 
+## 错误
+* 自定义错误
+* 错误处理
+
