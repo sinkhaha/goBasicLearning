@@ -23,6 +23,6 @@
 * [多态](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/object-program/duotai/duotai_test.go)
 
 ## 错误
-* 自定义错误
-* 错误处理
+* [自定义错误](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/error-handle/err/err_test.go)
+* [错误处理](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/error-handle/errhandle/errhandle_test.go)
 
