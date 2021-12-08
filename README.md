@@ -8,9 +8,8 @@
 * [运算符](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/basics/operator/operator_test.go)
 * [for循环/switch/if条件](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/basics/loop/loop_test.go)
 ## 字符串
-* 字符串
+* [字符串](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/string-test/string/string_test.go)
 ## 常用集合
-* 数组
-* 切片
-* map/set
-  
+* [数组](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/collection/array/array_test.go)
+* [切片](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/collection/slice/slice_test.go)
+* [map](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/collection/map)
