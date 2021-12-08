@@ -4,7 +4,7 @@ import "testing"
 
 // 测试for代替while循环
 func TestLoopWhile(t *testing.T) {
-	/** while(n<5)*/
+	/** 相当于while(n<5)*/
 	n := 0
 	for n < 5 {
 		t.Log(n)
@@ -25,7 +25,7 @@ func TestLoopWhileTrue(t *testing.T) {
 	}
 }
 
-// 测试if语句的赋值支持声明变量
+// if语句的赋值支持声明变量
 func TestIf(t *testing.T) {
 	if a := 1; a == 1 {
 		t.Log("1==1")
@@ -37,7 +37,7 @@ func TestSwitchMuitlCase(t *testing.T) {
 	for i := 0; i < 5; i++ {
 		switch i {
 		case 0, 2: // 匹配多个值
-			t.Log("偶数", i) // 不需要手写break
+			t.Log("偶数", i)
 		case 1, 3:
 			t.Log("奇数", i)
 		default:
@@ -60,9 +60,9 @@ func TestSwitchCaseCondition(t *testing.T) {
 	}
 }
 
-// 测试switch可以定义声明
+// 测试switch可以定义变量
 func TestSwitchCaseDecalar(t *testing.T) {
-	switch j := 2; j { // 可以声明j
+	switch j := 2; j { // 可以定义j
 	case 1:
 		t.Log("1")
 	case 2:

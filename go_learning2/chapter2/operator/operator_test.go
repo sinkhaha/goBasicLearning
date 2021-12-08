@@ -2,13 +2,15 @@ package operator_test
 
 import "testing"
 
-// 测试数组直接用==比较
+// 数组可以直接用==比较，相同维数且含有相同个数元素的数组才可以比较
 func TestOperator(t *testing.T) {
 	a := [...]int{1, 2, 3, 4}
 	b := [...]int{1, 3, 4, 5}
+
 	// c := [...]int{1, 2, 3, 4, 5}
 	d := [...]int{1, 2, 3, 4}
 	e := [...]int{1, 3, 2, 4}
+
 	// false
 	t.Log(a == b)
 
@@ -26,5 +28,5 @@ func TestOperator(t *testing.T) {
 func TestOpe(t *testing.T) {
 	a := 7     // 0111
 	a = a &^ 1 // 0111 &^ 01 等于 0110 即 6
-	t.Log(a)
+	t.Log(a)   // 6
 }

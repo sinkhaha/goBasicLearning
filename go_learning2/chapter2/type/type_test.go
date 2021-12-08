@@ -12,13 +12,13 @@ func TestTypeChange(t *testing.T) {
 
 	// 错误，不支持隐式类型转换
 	// b = a
-	// 正确，显示类型转换
+	// 正确，支持显示类型转换
 	b = int64(a)
 
 	var c MyInt
 	// 错误，别名也不支持隐式类型转换
 	// c = b
-	// 正确,显示类型转化
+	// 正确
 	c = MyInt(b)
 
 	t.Log(a, b, c)
@@ -33,15 +33,16 @@ func TestPoint(t *testing.T) {
 	// 错误，不支持指针运算
 	// aPtr = aPtr + 1
 
-	t.Log(a, aPtr, aPtr2)
-	t.Logf("%T %T %T", a, aPtr, aPtr2) // 格式化获取变量的类型， %T 获取变量的类型，输出int *int
+	t.Log(a, aPtr, aPtr2)              // 如 1 0xc00011c198 0xc00011c198
+	t.Logf("%T %T %T", a, aPtr, aPtr2) // %T是获取变量的类型，输出int *int *int
 }
 
-// go把string初始化为空字符串
+// string默认初始化为空字符串
 func TestString(t *testing.T) {
 	var s string
 	t.Log("*" + s + "*") //**
 	t.Log(len(s))        // 0
+
 	if s == "" {
 		t.Log("string初始值为空字符串")
 	}
