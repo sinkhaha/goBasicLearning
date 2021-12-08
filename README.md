@@ -15,4 +15,10 @@
 * [map](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/collection/map)
 ## 函数
 * [函数](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/func/func_test.go)
+## 面向对象编程
+* [结构体(类)](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/object-program/encapsulation/encap_test.go)
+* [接口](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/object-program/interface/interface_test.go)
+* [空接口](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/object-program/empty_interface/empty_interface_test.go)
+* [扩展和复用(组合)](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/object-program/extendsion/extendsion_test.go)
+* [多态](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/object-program/duotai/duotai_test.go)
 
