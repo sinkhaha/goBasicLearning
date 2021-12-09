@@ -31,10 +31,11 @@
 * [导入远程包](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/package-kno/remote_package/remote_package_test.go)
 
 ## 并发编程
-* 协程
-* sync包线程安全：Mutex和WaitGroup
-* CSP并发机制：channel
-* select多路选择实现超时
-* channel的关闭
-* 无关联任务的取消
-* 关联任务的取消
+* [协程](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/concurrent/groutine/groutine_test.go)
+* [sync包线程安全：Mutex和WaitGroup](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/concurrent/share_mem/share_mem_test.go)
+* [CSP并发机制：channel](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/concurrent/csp/async_service_test.go)
+* [select多路选择实现超时](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/concurrent/select/select_test.go)
+* [channel的关闭](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/concurrent/channel_close/channel_close_test.go)
+* [无关联任务的取消](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/concurrent/channel_cancel/channel_cancel_test.go)
+* [关联任务的取消](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/concurrent/channel_cancel_relate/channel_cancel_relate_test.go)
+
