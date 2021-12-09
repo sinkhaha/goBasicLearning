@@ -21,10 +21,10 @@ func cancelChannel(ch chan struct{}) {
 	close(ch)
 }
 
-// 测试取消协程里的任务
+// 测试取消协程里的任务(无关联的任务)
 func TestCancelTack(t *testing.T) {
 	// 通道里是放的是结构体数据
-	cancelChan := make(chan struct{}, 0)
+	cancelChan := make(chan struct{})
 
 	// 开启5个协程处理任务
 	for i := 0; i < 5; i++ {
@@ -35,6 +35,7 @@ func TestCancelTack(t *testing.T) {
 				}
 				time.Sleep(time.Millisecond * 5)
 			}
+
 			fmt.Println(i, "cancelled")
 		}(i, cancelChan)
 	}

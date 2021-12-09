@@ -30,3 +30,11 @@
 * [导入自己的包](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/package-kno/get_my_package/package_test.go)
 * [导入远程包](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/package-kno/remote_package/remote_package_test.go)
 
+## 并发编程
+* 协程
+* sync包线程安全：Mutex和WaitGroup
+* CSP并发机制：channel
+* select多路选择实现超时
+* channel的关闭
+* 无关联任务的取消
+* 关联任务的取消
