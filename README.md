@@ -40,9 +40,10 @@
 * [关联任务的取消](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/concurrent/channel_cancel_relate/channel_cancel_relate_test.go)
 
 ## 典型并发任务
-* 单例
-* 仅需任意一个任务完成
-* 所有任务完成
-* 对象池
-* sync.Pool对象缓存
+* [单例](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/task/singleton/singleton_test.go)
+* [仅需任意一个任务完成](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/task/any_response/any_response_test.go)
+* [所有任务完成](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/task/all_response/all_response_test.go)
+* [对象池](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/task/obj_pool)
+* [sync.Pool对象缓存](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/task/sync_pool_obj_cache)
+
 
