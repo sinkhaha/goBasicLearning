@@ -55,3 +55,8 @@
 * [反射](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/relfect-and-unsafe/reflect)
 * [unsafe不安全编程](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/relfect-and-unsafe/unsafe)
 
+## 常见架构模式实现
+* pipe-filter架构
+* micro-kernel微内核
+
+
