@@ -52,6 +52,6 @@
 * [BDD](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/some-test/bdd/bdd_test.go)
 
 ## 反射
-* 反射
-* unsafe不安全编程
+* [反射](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/relfect-and-unsafe/reflect)
+* [unsafe不安全编程](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/relfect-and-unsafe/unsafe)
 
