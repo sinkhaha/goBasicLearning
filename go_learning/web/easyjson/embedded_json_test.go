@@ -23,7 +23,9 @@ func TestEmbeddedJson(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
+
 	fmt.Println(*e)
+
 	if v, err := json.Marshal(e); err == nil {
 		fmt.Println(string(v))
 	} else {
@@ -38,13 +40,13 @@ func TestEasyJson(t *testing.T) {
 
 	// json => 对象
 	e.UnmarshalJSON([]byte(jsonStr))
-	fmt.Println("对象是：", e)
+	fmt.Println("对象是：", e) // 对象是： {{Mike 30} {[Java Go C]}}
 
 	// 对象=>json
 	if v, err := e.MarshalJSON(); err != nil {
 		t.Error(err)
 	} else {
-		fmt.Println("json字符串是：", string(v))
+		fmt.Println("json字符串是：", string(v)) // json字符串是： {"basic_info":{"name":"Mike","age":30},"job_info":{"skills":["Java","Go","C"]}}
 	}
 }
 

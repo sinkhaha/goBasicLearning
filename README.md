@@ -56,7 +56,15 @@
 * [unsafe不安全编程](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/relfect-and-unsafe/unsafe)
 
 ## 常见架构模式实现
-* pipe-filter架构
-* micro-kernel微内核
+* [pipe-filter架构](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/framework/pipe_filter)
+* [micro-kernel微内核](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/framework/microkernel)
+
+## web
+* 内置的json解析
+* easyjson包解析json
+* http服务
+* restful服务
+
+
 
 

@@ -17,7 +17,7 @@ func Hello(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	fmt.Fprintf(w, "hello, %s!\n", ps.ByName("name"))
 }
 
-// 使用第三方库实现resultfu服务
+// 使用第三方库实现restful服务
 func main() {
 	router := httprouter.New()
 	router.GET("/", Index)
