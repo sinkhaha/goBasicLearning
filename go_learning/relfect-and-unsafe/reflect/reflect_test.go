@@ -41,7 +41,7 @@ func TestTypeAndValue(t *testing.T) {
 // 通过反射编写灵活代码
 type Employee struct {
 	EmployeeID string
-	Name       string `haha:"normal"` // struct tag,是一个key/value结构
+	Name       string `haha:"normal"` // struct tag，是一个key/value结构
 	Age        int
 }
 
