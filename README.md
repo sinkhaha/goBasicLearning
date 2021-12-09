@@ -60,10 +60,13 @@
 * [micro-kernel微内核](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/framework/microkernel)
 
 ## web
-* 内置的json解析
-* easyjson包解析json
-* http服务
-* restful服务
+* [内置的json解析](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/web/json)
+* [easyjson包解析json](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/web/easyjson)
+* [http服务](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/web/hello_http)
+* [restful服务1](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/web/http_restful_router)
+* [restful服务1](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/web/http_restful_router1)
+
+
 
 
 
