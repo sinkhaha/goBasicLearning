@@ -47,6 +47,7 @@
 * [sync.Pool对象缓存](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/task/sync_pool_obj_cache)
 
 ## 测试
-* 单元测试
-* 性能测试
-* BDD
+* [单元测试](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/some-test/unit_test)
+* [性能测试](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/some-test/benchmark_test/concat_str_test.go)
+* [BDD](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/some-test/bdd/bdd_test.go)
+
