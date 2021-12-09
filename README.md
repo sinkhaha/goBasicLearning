@@ -67,11 +67,12 @@
 * [restful服务1](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/web/http_restful_router1)
 
 ## 性能调优
-* 性能调优
-* 字符串连接
-* gc友好的代码
-* 锁的使用
-* go tool trace
+* [性能调优](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/performance/performance-tuning)
+* [字符串连接](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/performance/string-benchmark)
+* [gc友好的代码](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/performance/gc_friendly)
+* [锁的使用](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/performance/locktest)
+* [go tool trace](https://github.com/sinkhaha/goBasicLearning/tree/master/go_learning/performance/tools)
+
 
 
 
