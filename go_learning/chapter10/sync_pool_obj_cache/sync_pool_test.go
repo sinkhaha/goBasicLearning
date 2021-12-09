@@ -7,7 +7,9 @@ import (
 	"testing"
 )
 
-// 测试sync.pool缓存对象的获取和放回
+// sync.Pool的使用：New、Get()、Put()
+
+// sync.pool缓存对象的获取和放回
 func TestSyncPool(t *testing.T) {
 	// 创建实例化一个池
 	pool := &sync.Pool{
@@ -24,12 +26,12 @@ func TestSyncPool(t *testing.T) {
 
 	// 放回对象
 	pool.Put(3)
-	// 此时池里面有值3了，所以不会去创建了,返回3
+	// 此时池里面有值3了，所以不会去创建了，返回3
 	v1, _ := pool.Get().(int)
 	fmt.Println("获取到的对象v1是", v1)
 
 	// 测试gc
-	// 先往池中放一个4，然后执行GC清除sync.pool中缓存的对象,gc时间不确定，可能出现还没gc掉池的对象
+	// 先往池中放一个4，然后执行GC清除sync.pool中缓存的对象，gc时间不确定，可能出现还没gc掉池的对象
 	pool.Put(4)
 	runtime.GC()
 	// 此时池是空的，所以会去new创建,返回100

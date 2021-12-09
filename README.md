@@ -39,3 +39,10 @@
 * [无关联任务的取消](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/concurrent/channel_cancel/channel_cancel_test.go)
 * [关联任务的取消](https://github.com/sinkhaha/goBasicLearning/blob/master/go_learning/concurrent/channel_cancel_relate/channel_cancel_relate_test.go)
 
+## 典型并发任务
+* 单例
+* 仅需任意一个任务完成
+* 所有任务完成
+* 对象池
+* sync.Pool对象缓存
+

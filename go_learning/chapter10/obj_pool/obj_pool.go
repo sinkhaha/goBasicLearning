@@ -1,6 +1,6 @@
 package obj_pool
 
-// 对象池的一些定义
+// 对象池工具类：使用buffered channel实现对象池
 import (
 	"errors"
 	"time"
@@ -23,10 +23,12 @@ type ObjPool struct {
 func NewObjPool(numOfObj int) *ObjPool {
 	objPool := ObjPool{}
 	objPool.bufChan = make(chan *ReusableObj, numOfObj)
+
 	for i := 0; i < numOfObj; i++ {
 		// 往池中预置ReusableObj对象
 		objPool.bufChan <- &ReusableObj{}
 	}
+
 	return &objPool
 }
 
@@ -41,11 +43,11 @@ func (p *ObjPool) GetObj(timeout time.Duration) (*ReusableObj, error) {
 }
 
 // 定义往ObjPool放置对象的方法
-func (p *ObjPool) ReleaseObj(obj *ReusableObj) error {
+func (p *ObjPool) AddObj(obj *ReusableObj) error {
 	select {
 	case p.bufChan <- obj:
 		return nil
-	default: // 当放不进去channel时，上面的语句不会阻塞，此时直接执行default，返回异常
+	default: // 当放不进去channel时，此时直接执行default，返回异常
 		return OverFlowError
 	}
 }
